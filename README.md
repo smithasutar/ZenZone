@@ -1,6 +1,6 @@
 **ZenZone – AI Therapy Companion**
 
-ZenZone is a simple chat web application that provides supportive conversations through an AI therapy companion.
+ZenZone is a simple chat web application that provides supportive conversations through an AI therapy companion (through FastAPI).
 It is designed for general mental wellness support, not as a replacement for professional care.
 
 🚀 Features

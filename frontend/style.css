@@ -172,3 +172,111 @@ button:disabled {
 button:hover:not(:disabled) {
     color: #0056b3;
 }
+
+/* Base speech bubble style */
+.message-content {
+    max-width: 75%;
+    padding: 18px 24px;
+    border-radius: 24px;
+    word-wrap: break-word;
+    position: relative;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* BOT messages (left side bubble with tail) */
+.message.bot .message-content {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-bottom-left-radius: 8px;
+    margin-left: 12px;
+}
+
+.message.bot .message-content::after {
+    content: "";
+    position: absolute;
+    top: 16px;
+    left: -10px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-right-color: white;
+    border-left: 0;
+    border-top: 0;
+    margin-top: -4px;
+}
+
+/* USER messages (right side bubble with tail) */
+.message.user .message-content {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    border-bottom-right-radius: 8px;
+    margin-right: 12px;
+}
+
+.message.user .message-content::after {
+    content: "";
+    position: absolute;
+    top: 16px;
+    right: -10px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-left-color: #4facfe;
+    border-right: 0;
+    border-top: 0;
+    margin-top: -4px;
+}
+
+.message {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.message.user {
+    justify-content: flex-end;
+}
+
+/* Bubble core */
+.message-content {
+    max-width: 70%;
+    padding: 14px 20px;
+    border-radius: 20px;
+    position: relative;
+    word-wrap: break-word;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Bot bubble */
+.message.bot .message-content {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    margin-left: 10px;
+}
+.message.bot .message-content::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    transform: translateY(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent #ffffff transparent transparent;
+}
+
+/* User bubble */
+.message.user .message-content {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: #ffffff;
+    margin-right: 10px;
+}
+.message.user .message-content::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent transparent #4facfe;
+}

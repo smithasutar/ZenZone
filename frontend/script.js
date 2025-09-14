@@ -3,13 +3,9 @@ const sendBtn = document.getElementById("sendBtn");
 const chatbox = document.getElementById("chatbox");
 
 
-function appendMessage(text,sender){
-    const msgDiv =document.createElement("div");
-    msgDiv.classList.add("message",sender);
-
-    const textBubble=document.createElement("span");
-    textBubble.classList.add("text-bubble");
-    textBubble.textContent=text;
+function appendMessage(text, sender) {
+    const msgDiv = document.createElement("div");
+    msgDiv.classList.add("message", sender);
 
     if (sender === "bot") {
         const avatar = document.createElement("div");
@@ -18,9 +14,13 @@ function appendMessage(text,sender){
         msgDiv.appendChild(avatar);
     }
 
-    msgDiv.appendChild(textBubble);
+    const bubble = document.createElement("div");
+    bubble.classList.add("message-content");
+    bubble.textContent = text;
+
+    msgDiv.appendChild(bubble);
     chatbox.appendChild(msgDiv);
-    chatbox.scrollTop=chatbox.scrollHeight;
+    chatbox.scrollTop = chatbox.scrollHeight;
 }
 
 

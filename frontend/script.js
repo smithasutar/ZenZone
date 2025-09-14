@@ -11,12 +11,11 @@ function appendMessage(text,sender){
     textBubble.classList.add("text-bubble");
     textBubble.textContent=text;
 
-    if(sender=="bot"){
-        const iconImg=document.createElement("img");
-        iconImg.src="logo.jpg"
-        iconImg.classList.add("bot-chat-logo");
-        iconImg.alt="bot logo";
-        msgDiv.appendChild(iconImg);
+    if (sender === "bot") {
+        const avatar = document.createElement("div");
+        avatar.classList.add("message-avatar", "bot-avatar");
+        avatar.textContent = "Z";
+        msgDiv.appendChild(avatar);
     }
 
     msgDiv.appendChild(textBubble);

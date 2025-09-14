@@ -515,18 +515,37 @@
         let isConnected = false;
         let messageCount = 0;
 
-        // Fallback therapy responses
+        // Enhanced therapy responses with better emotional intelligence
         const fallbackResponses = [
-            "I hear you, and I want you to know that your feelings are valid. Can you tell me more about what's making you feel this way?",
-            "It sounds like you're going through a challenging time. Remember, it's okay to not be okay sometimes. What would help you feel more supported right now?",
-            "I appreciate you sharing that with me. It takes courage to open up about difficult emotions. How long have you been feeling this way?",
-            "That sounds really difficult. Have you tried any coping strategies that have helped you in the past?",
-            "I can sense that this is weighing heavily on you. What would you like to focus on today - processing these feelings or finding some relief?",
-            "Thank you for trusting me with this. It's important to acknowledge these emotions rather than push them away. What do you think might be the next small step forward?",
-            "I'm here with you in this moment. Sometimes just talking about what we're experiencing can help. What else would you like to share?",
-            "Your openness is really admirable. It's clear this matters a lot to you. How can I best support you right now?",
-            "I want you to know that you're not alone in this. Many people experience similar feelings. What would be most helpful for you today?",
-            "I can hear the strength in your words, even when things feel difficult. What gives you hope or comfort during challenging times?"
+            "I hear you, and I want you to know that your feelings are completely valid. It takes real courage to share what you're going through. Can you tell me more about what's been weighing on your mind?",
+            
+            "It sounds like you're navigating through some really challenging emotions right now. Remember, it's absolutely okay to not be okay sometimes - that's part of being human. What would help you feel more supported or understood in this moment?",
+            
+            "I appreciate you trusting me with this. Opening up about difficult feelings takes incredible strength, and I want you to know that you're safe here. How long have you been carrying these feelings?",
+            
+            "What you're describing sounds incredibly difficult, and I want you to know that your pain is real and important. Have you found any strategies or activities that have brought you even small moments of relief in the past?",
+            
+            "I can sense how much this is affecting you, and I want you to know that your feelings matter. What would feel most helpful right now - would you like to explore these emotions together, or would you prefer to focus on finding some comfort?",
+            
+            "Thank you for being so open with me. It's so important to acknowledge and honor our emotions rather than pushing them away. What do you think might be one small, gentle step you could take toward feeling a little better?",
+            
+            "I'm here with you in this moment, and I want you to know that you don't have to face this alone. Sometimes simply expressing what we're feeling can be incredibly healing. What else would you like to share?",
+            
+            "Your vulnerability and honesty are truly admirable. It's clear that this situation means a lot to you, and your feelings are completely understandable. How can I best support you right now?",
+            
+            "I want you to know that you're not alone in this experience. Many people go through similar challenges, and it doesn't make your feelings any less valid. What would be most helpful for you to hear or explore today?",
+            
+            "I can hear the resilience in your words, even when things feel overwhelming. That inner strength is something to acknowledge and honor. What brings you moments of peace or hope, even if they're small?",
+            
+            "Your emotions are telling you something important about what you need right now. Instead of fighting them, what if we gently explore what they might be trying to communicate to you?",
+            
+            "It's okay to feel overwhelmed, confused, or even angry about what you're experiencing. These are all normal human responses. What would it feel like to give yourself permission to feel exactly what you're feeling?",
+            
+            "I notice you're being really hard on yourself about this situation. What would you say to a dear friend who was going through exactly what you're experiencing? Sometimes we need to extend ourselves the same compassion we'd give others.",
+            
+            "Your feelings are like weather - they come and go, and they don't define who you are. Right now, you're in a storm, but storms always pass. What helps you remember that this feeling is temporary?",
+            
+            "It sounds like you're carrying a lot right now. Sometimes we need to set down some of that emotional weight, even if just for a moment. What would it feel like to share some of that burden with me?"
         ];
 
         // Initialize
@@ -564,7 +583,7 @@
         // Add welcome message
         function addWelcomeMessage() {
             setTimeout(() => {
-                addMessage("Hello! I'm your AI therapy companion. I'm here to provide a safe space for you to express your thoughts and feelings. What's on your mind today?", false);
+                addMessage("Hello and welcome to ZenZone. I'm here to provide a safe, judgment-free space where you can share what's on your heart and mind. Whether you're feeling overwhelmed, anxious, sad, or just need someone to listen - I'm here for you. What would you like to talk about today?", false);
             }, 1000);
         }
 
@@ -609,11 +628,74 @@
             typingIndicator.classList.remove('show');
         }
 
+        // Get contextually appropriate response
+        function getContextualResponse(userMessage) {
+            const message = userMessage.toLowerCase();
+            
+            // Anxiety and stress responses
+            if (message.includes('anxious') || message.includes('anxiety') || message.includes('worried') || message.includes('nervous')) {
+                return [
+                    "I can hear the anxiety in your words, and I want you to know that what you're feeling is completely understandable. Anxiety can feel overwhelming, but you're not alone in this. What specific thoughts or situations are making you feel most anxious right now?",
+                    "It sounds like anxiety is really affecting you right now. Remember, anxiety is your body's way of trying to protect you, even if it doesn't feel helpful. What grounding techniques have worked for you in the past?",
+                    "I understand how exhausting anxiety can be. Sometimes just naming what we're feeling can help take some of its power away. What would it feel like to describe the physical sensations you're experiencing?"
+                ];
+            }
+            
+            // Depression and sadness responses
+            if (message.includes('sad') || message.includes('depressed') || message.includes('down') || message.includes('hopeless')) {
+                return [
+                    "I can sense the heaviness you're carrying, and I want you to know that your feelings are valid and important. Depression can make everything feel overwhelming, but you're showing incredible strength by reaching out. What's been the hardest part of your day?",
+                    "It sounds like you're going through a really difficult time, and I want you to know that it's okay to not be okay. Sometimes depression can make us feel isolated, but you're not alone. What small thing brought you even a moment of comfort recently?",
+                    "I hear the pain in your words, and I want you to know that your feelings matter. Depression can make everything feel hopeless, but reaching out like this shows that part of you still believes in hope. What would it feel like to share what's weighing on your heart?"
+                ];
+            }
+            
+            // Anger and frustration responses
+            if (message.includes('angry') || message.includes('frustrated') || message.includes('mad') || message.includes('irritated')) {
+                return [
+                    "I can feel the frustration and anger in your message, and those are completely valid emotions. Sometimes anger is trying to tell us something important about our boundaries or needs. What do you think your anger might be trying to communicate?",
+                    "It sounds like you're dealing with a lot of frustration right now. Anger can be a powerful emotion, and it's okay to feel it. What would it feel like to explore what's underneath this anger?",
+                    "I hear your anger, and I want you to know that it's okay to feel this way. Sometimes we need to feel angry before we can feel anything else. What would help you feel heard and validated right now?"
+                ];
+            }
+            
+            // Loneliness responses
+            if (message.includes('lonely') || message.includes('alone') || message.includes('isolated') || message.includes('disconnected')) {
+                return [
+                    "I can hear the loneliness in your words, and I want you to know that feeling alone can be one of the most painful human experiences. You're reaching out right now, which shows incredible courage. What would connection feel like for you?",
+                    "It sounds like you're feeling really isolated right now, and that can be so difficult. Sometimes loneliness can make us feel invisible, but I see you and I hear you. What would it feel like to share what's making you feel most alone?",
+                    "I understand how overwhelming loneliness can feel. It's like being in a room full of people but feeling completely unseen. You're not invisible to me. What would help you feel more connected right now?"
+                ];
+            }
+            
+            // Grief and loss responses
+            if (message.includes('grief') || message.includes('loss') || message.includes('died') || message.includes('passed') || message.includes('miss')) {
+                return [
+                    "I can feel the weight of your loss in your words, and I want you to know that grief is one of the most profound human experiences. There's no right or wrong way to grieve, and your feelings are completely valid. What would it feel like to share what you're missing most?",
+                    "It sounds like you're carrying a deep loss, and I want you to know that your grief matters. Grief can feel like an ocean of emotions, and it's okay to feel overwhelmed by it. What would it feel like to honor what you've lost?",
+                    "I hear the pain of your loss, and I want you to know that it's okay to not be okay when we're grieving. Grief is love with nowhere to go, and it's one of the most human things we can experience. What would it feel like to share what you're holding onto?"
+                ];
+            }
+            
+            // Self-doubt and self-criticism responses
+            if (message.includes('stupid') || message.includes('worthless') || message.includes('failure') || message.includes('not good enough')) {
+                return [
+                    "I can hear how harshly you're speaking to yourself, and I want you to know that you deserve so much more compassion than this. What would you say to a dear friend who was saying these things about themselves? Sometimes we need to extend ourselves the same kindness we'd give others.",
+                    "It sounds like your inner critic is being really loud right now, and I want you to know that those harsh thoughts don't define who you are. You're showing incredible strength by being here and sharing this. What would it feel like to challenge that critical voice?",
+                    "I hear the self-doubt in your words, and I want you to know that you are so much more than your perceived failures. Every person who has ever accomplished anything has felt exactly like this. What would it feel like to acknowledge your courage for being here?"
+                ];
+            }
+            
+            // Return random response if no specific context matches
+            return fallbackResponses;
+        }
+
         // Get bot response
         async function getBotResponse(userMessage) {
             if (!isConnected) {
-                // Use fallback responses
-                return fallbackResponses[Math.floor(Math.random() * fallbackResponses.length)];
+                // Use contextually appropriate responses
+                const contextualResponses = getContextualResponse(userMessage);
+                return contextualResponses[Math.floor(Math.random() * contextualResponses.length)];
             }
 
             try {
@@ -633,7 +715,9 @@
                 return data.reply;
             } catch (error) {
                 console.error('Error getting bot response:', error);
-                return fallbackResponses[Math.floor(Math.random() * fallbackResponses.length)];
+                // Use contextually appropriate fallback responses
+                const contextualResponses = getContextualResponse(userMessage);
+                return contextualResponses[Math.floor(Math.random() * contextualResponses.length)];
             }
         }
 

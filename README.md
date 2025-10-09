@@ -1,4 +1,5 @@
-🧘‍♀️ **ZenZone – AI Therapy Companion**
+
+## 🧘‍♀️ **ZenZone – AI Therapy Companion**
 
 ZenZone is a simple web-based chat application that provides supportive, AI-powered conversations for mental wellness.  
 It is **not a replacement for professional care**, but a space for calm, mindful interaction and emotional reflection.

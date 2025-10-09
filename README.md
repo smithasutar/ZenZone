@@ -31,7 +31,7 @@ You can simply open the index.html file in your web browser to start using the a
 ### 3. (Optional) Connect to Backend API
 
 If your chat is configured to use a FastAPI backend (e.g., http://127.0.0.1:8000/chat):
-```bash
+exit 0
 
 ## **Run your FastAPI server:**
 

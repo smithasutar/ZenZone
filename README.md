@@ -20,7 +20,6 @@ It is **not a replacement for professional care**, but a space for calm, mindful
 ## 🛠️ **Setup & Usage**
 
 ### 1. Clone the Repository
-```bash
 git clone https://github.com/yourusername/zenzone.git
 cd zenzone
 
@@ -31,7 +30,6 @@ You can simply open the index.html file in your web browser to start using the a
 ### 3. (Optional) Connect to Backend API
 
 If your chat is configured to use a FastAPI backend (e.g., http://127.0.0.1:8000/chat):
-exit 0
 
 ## **Run your FastAPI server:**
 

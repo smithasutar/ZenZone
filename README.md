@@ -1,43 +1,45 @@
-**ZenZone – AI Therapy Companion**
+🧘‍♀️ ZenZone an AI Therapy Companion
 
-ZenZone is a simple chat web application that provides supportive conversations through an AI therapy companion (through FastAPI).
-It is designed for general mental wellness support, not as a replacement for professional care.
+ZenZone is a simple web-based chat application that provides supportive, AI-powered conversations for mental wellness.
+It is not a replacement for professional care, but a space for calm, mindful interaction and emotional reflection.
 
 🚀 Features
 
-💬 Real-time chat between user and AI bot
+💬 Real-time Chat —> Talk with your AI therapy companion in a responsive chat interface.
 
-🎨 Modern UI with gradient backgrounds and smooth animations
+🎨 Modern UI —> Elegant gradients, soft animations, and clean layout.
 
-🗨️ Speech bubble messages with tails pointing to avatars
+🗨️ Chat Bubbles —> Messages styled with speech tails and avatars for clarity.
 
-🤖 Bot avatar (Z) for easy distinction
+🤖 Bot Avatar (Z) —> Clearly distinguishes AI messages from user input.
 
-📱 Responsive design for desktop and mobile
+📱 Responsive Design —> Works seamlessly across desktop and mobile.
 
-⚠️ Warning banner for mental health disclaimer
-
+⚠️ Mental Health Disclaimer Banner —> Prominent reminder that ZenZone is for wellness, not medical advice.
 
 🛠️ Setup & Usage
 1. Clone the Repository
-git clone https://github.com/yourusername/zenzone.git
-cd zenzone
 
 2. Open Locally
 
-- Simply open index.html in your browser.
+You can simply open the index.html file in your web browser to start using the app.
 
-3. Backend (Optional)
+3. (Optional) Connect to Backend API
 
-- If you’re connecting to an API (like FastAPI at http://127.0.0.1:8000/chat in your code):
+If your chat is configured to use a FastAPI backend (e.g., http://127.0.0.1:8000/chat):
 
-- Start your backend server: uvicorn main:app --reload
+Run your FastAPI server:
 
-Make sure it returns JSON responses like:
+uvicorn main:app --reload
 
-{ "reply": "Hello! How are you feeling today?" }
+
+Ensure the backend returns JSON responses like:
+
+{
+  "reply": "Hello! How are you feeling today?"
+}
 
 ⚠️ Disclaimer
 
 ZenZone is not a substitute for professional mental health care.
-If you are in crisis, please call emergency services or reach out to a licensed professional.
+If you are experiencing a mental health crisis or need immediate help, please contact emergency services or a licensed mental health professional.

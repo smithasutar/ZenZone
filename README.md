@@ -1,43 +1,54 @@
-**ZenZone – AI Therapy Companion**
 
-ZenZone is a simple chat web application that provides supportive conversations through an AI therapy companion (through FastAPI).
-It is designed for general mental wellness support, not as a replacement for professional care.
+## 🧘‍♀️ **ZenZone – AI Therapy Companion**
 
-🚀 Features
+ZenZone is a simple web-based chat application that provides supportive, AI-powered conversations for mental wellness.  
+It is **not a replacement for professional care**, but a space for calm, mindful interaction and emotional reflection.
 
-💬 Real-time chat between user and AI bot
+---
 
-🎨 Modern UI with gradient backgrounds and smooth animations
+## 🚀 **Features**
 
-🗨️ Speech bubble messages with tails pointing to avatars
+- 💬 **Real-time Chat** — Talk with your AI therapy companion in a responsive chat interface.  
+- 🎨 **Modern UI** — Elegant gradients, soft animations, and clean layout.  
+- 🗨️ **Chat Bubbles** — Messages styled with speech tails and avatars for clarity.  
+- 🤖 **Bot Avatar (Z)** — Clearly distinguishes AI messages from user input.  
+- 📱 **Responsive Design** — Works seamlessly across desktop and mobile.  
+- ⚠️ **Mental Health Disclaimer Banner** — Prominent reminder that ZenZone is for wellness, not medical advice.
 
-🤖 Bot avatar (Z) for easy distinction
+---
 
-📱 Responsive design for desktop and mobile
+## 🛠️ **Setup & Usage**
 
-⚠️ Warning banner for mental health disclaimer
-
-
-🛠️ Setup & Usage
-1. Clone the Repository
+### 1. Clone the Repository
 git clone https://github.com/yourusername/zenzone.git
 cd zenzone
 
-2. Open Locally
+### 2. Open Locally
 
-- Simply open index.html in your browser.
+You can simply open the index.html file in your web browser to start using the app.
 
-3. Backend (Optional)
+### 3. (Optional) Connect to Backend API
 
-- If you’re connecting to an API (like FastAPI at http://127.0.0.1:8000/chat in your code):
+If your chat is configured to use a FastAPI backend (e.g., http://127.0.0.1:8000/chat):
 
-- Start your backend server: uvicorn main:app --reload
+## **Run your FastAPI server:**
 
-Make sure it returns JSON responses like:
+Always show details
+uvicorn main:app --reload
 
-{ "reply": "Hello! How are you feeling today?" }
+---
 
-⚠️ Disclaimer
+## **Ensure the backend returns JSON responses like:**
+
+Always show details
+{
+  "reply": "Hello! How are you feeling today?"
+}
+
+---
+
+## **⚠️ Disclaimer**
 
 ZenZone is not a substitute for professional mental health care.
-If you are in crisis, please call emergency services or reach out to a licensed professional.
+If you are experiencing a mental health crisis or need immediate help, please contact emergency services or a licensed mental health professional.
+"""

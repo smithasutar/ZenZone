@@ -33,7 +33,6 @@ async function sendMessage(){
     inputMessage.value = '';
     sendBtn.disabled=true;
 
-
     try {
         const response = await fetch('https://zenzone-pq9t.onrender.com', {
             method: 'POST',

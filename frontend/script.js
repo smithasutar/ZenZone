@@ -25,47 +25,37 @@ function appendMessage(text, sender) {
 
 
 
-async function sendMessage() {
-    const message = inputMessage.value.trim();
-    if (!message) return;
-    appendMessage(message, "user");
+async function sendMessage(){
+    const message=inputMessage.value.trim();
+
+    if(!message) return ; 
+    appendMessage(message,"user");
     inputMessage.value = '';
-    sendBtn.disabled = true;
+    sendBtn.disabled=true;
+
 
     try {
-        // const response = await fetch('/chat', {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify({
-        //         message,
-        //         session_id: window.localStorage.getItem('session_id') || null
-        //     }),
-        // });
-
-        const response = await fetch('/chat', {  // use relative path
+        const response = await fetch('https://zenzone-pq9t.onrender.com', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message }),   // session_id etc. optional
+            body: JSON.stringify({ message }),
         });
 
         if (!response.ok) throw new Error("Network response was not ok");
 
         const data = await response.json();
-        appendMessage(data.reply, "bot");
-
-        // Save session_id
-        if (data.session_id) {
-            window.localStorage.setItem('session_id', data.session_id);
-        }
+        // data.reply
+        appendMessage(data.reply,"bot")
 
     } catch (error) {
-        appendMessage('Error: Could not reach the server.', 'bot');
-    } finally {
-        sendBtn.disabled = false;
+        appendMessage('Error: Could not reach the server.','bot');
+    } finally{
+        sendBtn.disabled=false;
         inputMessage.focus();
     }
-}
+    
 
+}
 
 // event
 sendBtn.addEventListener("click",sendMessage)

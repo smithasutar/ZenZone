@@ -1,6 +1,8 @@
 
 ## 🧘‍♀️ **ZenZone – AI Therapy Companion**
 
+Live Site: 🌐 https://zenzone-1.onrender.com/
+
 ZenZone is a simple web-based chat application that provides supportive, AI-powered conversations for mental wellness.  
 It is **not a replacement for professional care**, but a space for calm, mindful interaction and emotional reflection.
 
@@ -14,36 +16,25 @@ It is **not a replacement for professional care**, but a space for calm, mindful
 - 🤖 **Bot Avatar (Z)** — Clearly distinguishes AI messages from user input.  
 - 📱 **Responsive Design** — Works seamlessly across desktop and mobile.  
 - ⚠️ **Mental Health Disclaimer Banner** — Prominent reminder that ZenZone is for wellness, not medical advice.
+---
+
+## 🧰 **Tech Stack**
+
+- Frontend: HTML, CSS, JavaScript
+
+- Backend: Python 3.11+, FastAPI, Uvicorn
+
+- Hosting: Render
+
+- AI API: Groq / OpenAI
 
 ---
 
-## 🛠️ **Setup & Usage**
+## 🌐 Deployment (via Render)
+- Component	Type	URL
+Frontend	Static Site	https://zenzone-1.onrender.com
 
-### 1. Clone the Repository
-git clone https://github.com/yourusername/zenzone.git
-cd zenzone
-
-### 2. Open Locally
-
-You can simply open the index.html file in your web browser to start using the app.
-
-### 3. (Optional) Connect to Backend API
-
-If your chat is configured to use a FastAPI backend (e.g., http://127.0.0.1:8000/chat):
-
-## **Run your FastAPI server:**
-
-Always show details
-uvicorn main:app --reload
-
----
-
-## **Ensure the backend returns JSON responses like:**
-
-Always show details
-{
-  "reply": "Hello! How are you feeling today?"
-}
+Backend (FastAPI)	Web Service	(private endpoint used by frontend)
 
 ---
 

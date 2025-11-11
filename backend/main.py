@@ -29,7 +29,7 @@ app.add_middleware(
         "http://127.0.0.1:3000",
         "http://127.0.0.1:5173",
         "http://127.0.0.1:5500",
-        "https://zenzone-piqw.onrender.com/" 
+        "https://zenzone-piqw.onrender.com" 
     ],
     allow_methods=["*"],
     allow_headers=["*"],

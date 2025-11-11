@@ -22,7 +22,13 @@ client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "http://localhost:3000",
+        "http://localhost:5173",
+        "http://127.0.0.1:3000",
+        "http://127.0.0.1:5173",
+        "https://your-render-app.onrender.com"  # Add your deployed URL
+    ],
     allow_methods=["*"],
     allow_headers=["*"],
     allow_credentials=True
@@ -79,3 +85,8 @@ async def clear_history(request: ClearRequest):
 @app.get("/health")
 async def health_check():
     return {"status": "ok", "active_sessions": len(chat_sessions)}
+
+# Start server
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)

@@ -79,8 +79,3 @@ async def clear_history(request: ClearRequest):
 @app.get("/health")
 async def health_check():
     return {"status": "ok", "active_sessions": len(chat_sessions)}
-
-# Start server
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8000))
-    uvicorn.run("main:app", host="0.0.0.0", port=port)

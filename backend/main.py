@@ -7,6 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from groq import Groq
 from dotenv import load_dotenv
+import uvicorn
 
 # Load env locally (optional on Render)
 load_dotenv()
@@ -30,7 +31,7 @@ app.add_middleware(
         "http://127.0.0.1:5173",
         "http://127.0.0.1:5500",
         "https://zenzone-piqw.onrender.com",
-        "https://zenzone-1.onrender.com", 
+        "https://zenzone-1.onrender.com",
     ],
     allow_methods=["*"],
     allow_headers=["*"],
@@ -45,7 +46,7 @@ class ChatRequest(BaseModel):
     message: str
     session_id: str = None
     temperature: float = 0.7
-    max_tokens: int = 256
+    max_tokens: int = 1024
 
 class ClearRequest(BaseModel):
     session_id: str
@@ -59,7 +60,7 @@ def get_bot_response(user_message: str, session_id: str, temperature: float, max
     try:
         chat_completion = client.chat.completions.create(
             messages=chat_sessions[session_id],
-            model="llama-3.3-70b-versatile",
+            model="openai/gpt-oss-120b",
             stream=False,
             temperature=temperature,
             max_tokens=max_tokens,
